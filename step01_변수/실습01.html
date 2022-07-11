@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수 실습 01</title>
+</head>
+
+<body>
+    <div id="box">박스입니다. 친구가 없습니다.</div>
+    <div id="box02">박스입니다. 친구가 없습니다.</div>
+    <div id="box03" onclick="글자바꾸기02()">박스입니다. 친구가 없습니다.</div>
+    <script>
+        const BOX = document.getElementById('box')
+        const BOX02 = document.getElementById('box02')
+        const BOX03 = document.getElementById('box03')
+
+        console.log(BOX, typeof (BOX))
+        const 글자바꾸기 = function () {
+            this.innerText = '원래 친구가 없습니다.'
+        }
+        // 함수는 쓰기 전에 선언이 되어 있어야 한다.
+        
+        function 글자바꾸기02() {
+            BOX03.innerText = '원래 원래 친구가 없습니다.'
+        }
+
+        BOX.addEventListener('click', 글자바꾸기) //event를 매개변수로 여러개를 줄 수 있다.
+        BOX02.onclick = function () {
+            this.innerText = '이제 친구가 있습니다.'
+        }
+
+    </script>
+</body>
+
+</html>
