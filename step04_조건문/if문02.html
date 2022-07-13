@@ -10,17 +10,24 @@
 
 <body>
     <div id="txt"></div>
+    <input id="input">
+    <button id="btn">click</button>
     <script>
-        let age = 11;
-        if (age < 10) {
-            txt.innerText = `안돼 돌아가`
-        } else if (age >= 10 && age <= 20) {
-            txt.innerText = `친구들 안녕`
-        } else if (age > 20 && age < 40) {
-            txt.innerText = `선생님 안녕`
-        } else {
-            txt.innerText = `어르신 안녕`
-        }
+        btn.addEventListener('click', function () {
+            console.log('click', input.value)
+            let age = input.value;
+
+            if (age < 10) {
+                txt.innerText = `안돼 돌아가`
+            } else if (age >= 10 && age <= 20) {
+                txt.innerText = `친구들 안녕`
+            } else if (age > 20 && age < 40) {
+                txt.innerText = `선생님 안녕`
+            } else {
+                txt.innerText = `어르신 안녕`
+            }
+        })
+
     </script>
 </body>
 

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문 04 - switch문</title>
+</head>
+
+<body>
+    <script>
+        let age = '';
+
+        // 조건이 들어오고 그것에 대한 판별을 한다.
+        // break를 걸어주면 판별을 한 뒤 그 값이 조건에 맞으면 뒤쪽의 함수를 실행하지 않는다.
+        switch (age) {
+            case '아들': console.log('아들입니다');
+                break;
+            case '아버지': console.log('아버지입니다');
+                break;
+            default: console.log('귀신입니다');
+        }
+    </script>
+</body>
+
+</html>
