@@ -48,12 +48,34 @@
         console.log(
             Boolean(TA), //false
             Boolean(TB), //false
-            Boolean(TC), 
+            Boolean(TC),
             Boolean(TD), //true
             Boolean(TE), //false
             Boolean(TF), //false
         )
 
+        const 객체 = {
+            name: 'hongjiwon',
+            age: 33,
+            work: function () {
+                console.log('developer')
+            }
+        }
+
+        console.log(객체.name, 객체['name'])
+
+        const 배열 = [1, 2, 3, 4, 5]
+        //순서가 있는 자료의 모음
+
+        console.log(배열[0])
+
+        const 함수 = function () {
+            return '아임펑션'
+        }
+
+        console.log(함수())
+        // 함수를 실행해라 ()
+        // 함수만 치면 함수 자체를 뱉어냄
     </script>
 </body>
 
