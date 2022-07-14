@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문 01 - for문 01</title>
+</head>
+
+<body>
+    <div id="num">0</div>
+    <ul id="list">
+        <li>sum01</li>
+        <li>sum02</li>
+        <li>sum03</li>
+        <li>sum04</li>
+    </ul>
+    <script>
+
+        const UL = document.querySelector('#list');
+        console.log(UL);
+
+        //UL을 #list html을 불러오는 것으로 변수 선언
+
+        const LI = document.querySelectorAll('#list li');
+        console.log(LI);
+
+        //LI를 html의 #list li 엘리먼트를 선택하는 것으로 변수 선언
+
+        for (i = 0; i < LI.length; i++) {
+            LI[i].style.color = 'red';
+        }
+        //LI.length = LI 의 인덱스 번호
+
+        LI.forEach(function (el) {
+            el.style.fontSize = '30px';
+        })
+
+        LI.forEach(el => el.style.color = 'blue')
+
+        const NUM = document.querySelector('#num')
+        const DATA = ['하나', '둘', '셋', '넷',];
+
+        LI.forEach(function (el, idx) {
+            el.addEventListener('click', function () {
+                LI.forEach(function (el) {
+                    el.style.color = 'blue';
+                })
+                el.style.color = 'yellow'
+                NUM.innerText = DATA[idx];
+            })
+        });
+
+        //LI의 엘리먼트를 클릭하는 이벤트를 실행했을 때
+        //LI의 엘리먼트를 순회하면서 click 이벤트를 실행했을 때 엘리먼트의 컬러를 blue
+        //LI의 엘리먼트를 순회하면서 click 이벤트를 실행했을 때 엘리먼트의 컬러를 yellow
+        //forEach(element, index) 정해져있는 변수
+
+
+        // $('#list li').on('click', function () {
+        //     $('#list li').css({ color: 'blue' })
+        //     $(this).css({ color: 'yellow' })
+        // })
+        //두번째 줄은 #list li 전체를 순회해서 blue로 바꿔야하기에 this 쓰면 안됨
+
+        console.log(DATA)
+
+        for (i = 0; i < DATA.length; i++) {
+            console.log(DATA[i]);
+        }
+
+        for (i = 1; i < 10; i++) {
+            console.log(i)
+        }
+
+
+
+    </script>
+</body>
+
+</html>
