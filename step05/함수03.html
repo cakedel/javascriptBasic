@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 03</title>
+</head>
+
+<body>
+    <div id="App">
+        <a href="#">click!</a>
+    </div>
+    <ul id="UL">
+        <li>menu01</li>
+        <li>menu02</li>
+        <li>menu03</li>
+    </ul>
+    <script>
+
+        const App = document.querySelector('#App')
+        const UL = document.querySelector('#UL')
+
+        // function name() {
+        //     console.log('hongjiwon')
+        // }
+
+        // App.addEventListener('click', () => {
+        //     this.style.color = '#f00'
+        // });
+        // 화살표 함수에서는 this 가 없다.
+
+        App.addEventListener('click', (event) => {
+            console.log(event.target, event.currentTarget);
+        });
+
+        UL.addEventListener('click', e => {
+            let TG = e.target;
+            //이벤트 위임. 이벤트를 받고 있는 것은 UL이다.
+            const AllLI = [...UL.children];
+            //스프레드 연산자
+            console.log(AllLI)
+            
+            AllLI.forEach(e => { e.style.color = '' })
+            //li들을 순회하는 forEach함수로 컬러를 빼준뒤
+            TG.style.color = '#f00';
+            //클릭하는 타겟에 컬러를 넣어준다.
+        
+
+        })
+
+    </script>
+</body>
+
+</html>

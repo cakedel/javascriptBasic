@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이름쓰기</title>
+</head>
+
+<body>
+    <div id="App">writingname</div>
+
+    <script>
+        const DIV = document.getElementById('App')
+        console.log(DIV);
+        const writingname = (a) => {
+            DIV.innerText = a;
+        }
+
+        DIV.addEventListener('click', function () {
+            writingname('hongjiwon')
+        })
+        // 콜백함수 -- 매개변수로 들어오는 함수
+        // 함수를 바로 넣어서 실행하면 클릭하기 전에 들어와서 콜백함수를 써준다.
+
+
+    </script>
+</body>
+
+</html>

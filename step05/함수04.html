@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 04</title>
+</head>
+
+<body>
+
+    <script>
+        // javascript는 한번에 하나의 일밖에 하지못한다.
+        // -- 동기 : 하나의 요청이 완료가 된 후 다음 요청을 실행하는 방식. 순차적 로직 흐름
+        // 동시에 두 번의 일을 하기 위한 것. 
+        //-- 비동기 : 어떤 요청이 오면 완료가 되기 전에 다음 요청을 실행하는 방식. 
+        // 콜백 함수 
+        //-- 함수의 매개변수로 들어가는 함수
+        //-- 어떤 이벤트에 의해 호출되어지는 함수 
+        //-- 가독성, 코드 재사용, 비동기 함수를 동기 처리 하기 위해
+
+        function one() { console.log(1); }
+        function two() { console.log(2); }
+        function three() { console.log(3); }
+
+        function number(callback) {
+            callback();
+        }
+
+        number(three);
+
+        //--------------------------
+
+        function func(cb) {
+            cb();
+        }
+
+        function cb() {
+            console.log('callback function')
+        }
+
+        func(cb);
+
+        //
+
+        function introduce(lastName, firtstName, callback) {
+            const fullName = lastName + firtstName;
+            callback(fullName);
+        }
+
+        introduce('hong', 'jiwon', function (name) {
+            console.log(name);
+        });
+
+        //--
+
+        function findUser(id) {
+            let user;
+            setTimeout(function () {
+                //비동기 함수의 호출
+                console.log('wated 0.1 sec.');
+                user = {
+                    id: id
+                    name: "User" + id,
+                    email: id + "@test.com"
+                };
+            }, 100)
+            return user;
+        }
+        const user = findUser(1);
+        console.log("user", user);
+
+        //--
+        function findUserAndCallback(id, cb) {
+            setTimeout(function () {
+                console.log('wated 0.1 sec.');
+                const user = {
+                    id: id,
+                    name: "User" + id,
+                    email: id + "@test.com"
+                };
+                cb(user);
+            }, 100);
+        }
+
+        findUserAndCallback(1, function (user) {
+            console.log("user", user);
+        })
+
+        
+    </script>
+</body>
+
+</html>

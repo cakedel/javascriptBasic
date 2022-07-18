@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 01</title>
+</head>
+
+<body>
+
+    <div id="App"></div>
+
+    <script>
+
+        name('hongjiwon', 'sleep');
+
+
+        function name(a, b) {
+            console.log(a, b)
+        }
+
+        // 함수는 호이스팅 된다.
+
+        const name2 = function (a) {
+            console.log(a)
+        }
+        // 변수 선언
+        // 변수는 호이스팅 되지 않는다.
+        // 변수에 담긴 함수도 호이스팅 되지 않는다.
+
+        name2('imfunction');
+
+        const name3 = (a) => {
+            console.log(a), console.log('sleepy')
+        }
+        //화살표 함수(arrow function)은 이름이 없는 무명함수다.
+        //화살표 함수 표현식 arrow function expression
+
+        name3('imarrowfunction');
+
+        const name4 = (a, b) => console.log(a, b);
+
+        name4 ('imarrowfunction', 'ouch');
+
+    </script>
+</body>
+
+</html>
