@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 01 - 개발자객체만들기</title>
+</head>
+
+<body>
+    <div id="App">객체 만들기</div>
+    <div id="This">객체 만들기</div>
+
+    <script>
+        //1. 객체 리터럴 표기법을 이용한 객체의 생성
+        const hongjiwon = {
+            name: 'hongjiwon',
+            age: 20,
+
+        }
+
+        console.log(hongjiwon.name + `잠만보`)
+
+        //2. 객체 생성자함수를 이용한 객체의 생성
+        const peonyblue = new Object();
+        peonyblue.name = 'object';
+        peonyblue.age = 31;
+
+        console.log(peonyblue);
+
+        // 3. 객체의 메소드 : 객체는 속성 (property)과 함수(method)를 가진다.
+        // property (key :value)
+
+        const kimjiwon = {
+            name: 'kimjiwon',
+            하는일: function () {
+                console.log(`${kimjiwon.name}잘먹고잘자기`)
+            }
+        }
+        console.log(kimjiwon['name'], kimjiwon.name);
+
+        kimjiwon.하는일();
+
+        // 4. 객체에서의 this
+        // `drink with ${this.name}` = 'drink with'+ this.name
+        // this의 name이 아닌 this 객체 자체를 가리킨다.
+        const parkjiwon = {
+            name: 'parkjiwon',
+            age: 3,
+            job: function () {
+                console.log(`drink with ${this.name}`)
+            }
+        }
+        parkjiwon.job();
+
+        // 5. 객체의 메소드로 ()=> arrow function을 쓰면 this는?
+
+        const yujiwon = {
+            name: 'yujiwon',
+            age: 10,
+            job: () => {
+                console.log(`drink with ${this.name}`)
+            }
+        }
+        yujiwon.job();
+
+        // this가 사라진 결과값이 출력
+
+        // 6. 객체 안 일반적인 함수(무명)에서의 this
+
+        const hong = {
+            name: 'jiwon',
+            job: function () {
+                setInterval(function () {
+                    console.log('drink mintchoco with ' + this.name)
+                }, 1000)
+            }
+        }
+
+        hong.job();
+
+        //역시 this가 사라진 결과값이 출력. this = window를 가리키고 있음.
+
+        const yu = {
+            name: 'jiwon',
+            job: function () {
+                setInterval(() => {
+                    console.log('drink mintchoco with ' + this.name)
+                }, 1000)
+            }
+        }
+
+        yu.job();
+        
+        //화살표 함수에서는 this가 객체를 가리킨다.
+
+        //--
+        //etc. EventListener에서의 this
+        // id는 바로 선택이 가능하지만 권장하는 방법이 아니다. 
+        // 권장 방법 -- document.querySelector('#App'), document.getElementById('App')
+
+        App.addEventListener('click', function () {
+            console.log(this) //EventListener function에서의 this는 App 태그 자체 
+        })
+
+        This.addEventListener('click', () => {
+            console.log(this) //Arrow function에서의 this는 window 
+        })
+
+        console.log(this)
+    </script>
+
+</body>
+
+</html>

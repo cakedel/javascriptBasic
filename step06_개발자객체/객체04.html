@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 04 - 객체 생성자 함수 </title>
+</head>
+
+<body>
+
+    <script>
+        //1. 객체를 찍어내는 기계를 만드는 방법. class로 바뀜.
+        function hong(name) {
+            this.name = name
+            this.showName = function () {
+                console.log(this.name)
+            }
+        }
+
+        // 인스턴스 생활코딩
+
+        const hongjiwon = new hong('hongjiwon');
+        hongjiwon.showName();
+        const yujiwon = new hong('penguin');
+        yujiwon.showName();
+
+        hong.prototype.group = 'tired one'
+
+        console.log(yujiwon.group);
+        console.log(hongjiwon.group);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 02 - 스프레드 함수</title>
+</head>
+
+<body>
+
+    <script>
+
+        //1. 스프레드 연산자는 늘여놓는다.
+        const animal = {
+            leg: 4,
+            type: 'animal',
+            mouth: 1,
+        }
+
+        const cow = {
+            ...animal,
+            sound: 'mu'
+        }
+
+        const horse = {
+            ...animal,
+            sound: 'hing'
+        }
+        const dog = {
+            ...animal,
+            sound: 'bow'
+        }
+
+        console.log(cow, horse, dog)
+    </script>
+</body>
+
+</html>
