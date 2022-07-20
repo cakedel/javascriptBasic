@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열 01</title>
+</head>
+
+<body>
+    <h1>배열을 공부합니다.</h1>
+    <p>배열은 데이터와 관련이 있습니다.</p>
+    <script>
+        // 1. 배열을 선언하는 옛날 방식
+        const array = new Array();
+        array[3] = 1;
+        // array 3번째 index 배열에 1를 넣겠다는 명령어
+        array.push(0);
+        // 배열 맨 뒤에 0을 넣는 명령어
+        array.unshift(1);
+        // 배열 맨 처음에 1을 넣는 명령어. index를 뒤로 밀어낸다.
+        console.log(array);
+        console.log(array[3]);
+        // unshift 명령어로 배열의 인덱스가 바뀌어서 3번째 index가 empty가 되었다.
+        array.shift();
+        // 첫번째 배열을 삭제한다.
+        array.pop();
+        // 마지막 배열을 삭제한다.
+        console.log(array[3]);
+        // 배열에 넣었던 첫번째, 마지막 배열을 삭제하여 3번째 index가 다시 1이 되었다.
+
+
+
+        //2. 배열을 만드는 최신 방식
+        const array2 = [];
+        array2[0] = 1;
+        console.log(array2);
+
+    </script>
+</body>
+
+</html>

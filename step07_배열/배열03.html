@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열 03 - forEach</title>
+</head>
+
+<body>
+    <h1>배열을 공부합니다. 03 - foreach</h1>
+    <p>배열은 데이터와 관련이 있습니다.</p>
+    <div id="tabMenu">
+        <ul class="tMenu">
+            <li>menu01</li>
+            <li>menu02</li>
+            <li>menu03</li>
+        </ul>
+        <div class="tContent">
+            <div>content01</div>
+            <div>content02</div>
+            <div>content03</div>
+        </div>
+    </div>
+    <script>
+        const array = [
+            { id: 1, content: 'imchoco' },
+            { id: 2, content: 'imcookie' },
+            { id: 3, content: 'imbutter' },
+            { id: 4, content: 'imsalt' },
+            { id: 5, content: 'imsugar' },
+        ];
+
+        //배열을 도와주는 함수 01 - forEach            
+        array.forEach(function (el) {
+            console.log(el);
+        })
+        //el = element 매개변수 자리
+        array.forEach(el =>
+            console.log(el));
+
+        array.forEach(el => console.log(el.content));
+        //배열을 순회하며 객체 값(value)을 끄집어내어주는 함수 forEach
+        array.forEach((el, idx, arry) => console.log(el.content, idx, arry));
+        //배열을 순회하며 객체값(el), index번호(idx), 배열자체(arry)를 가져온다.
+        //화살표 함수에서 매개변수가 2개 이상일때에는 화살표앞 매개변수 자리에 괄호를 쳐주도록 한다!
+
+        const TUL = document.querySelectorAll('.tMenu>li');
+        const TCON = document.querySelectorAll('.tContent>div');
+        console.log(TUL)
+        // querySelectorAll 배열처럼 행동하지만 실제로는 배열은 아닌 배열...Nodelist
+        // forEach로 다룰 수 있는 유사배열
+
+        TUL.forEach((el, idx) => {
+            el.addEventListener('click', () => {
+                TUL.forEach(el => el.classList.remove('on'))
+                el.classList.add('on');
+                console.log(idx);
+                TCON.forEach(el => el.classList.remove('on'))
+                TCON[idx].classList.add('on')
+
+            })
+        })
+
+        const spread = [...TUL];
+        console.log(spread);
+
+        const UL = document.querySelector('.tMenu');
+        const LI = [...UL.children];
+        console.log(LI);
+
+
+        //indexOf() -- 배열의 번호를 반환한다. 
+        UL.addEventListener('click', e => {
+            let idx = LI.indexOf(e.target)
+            console.log(idx);
+        })
+
+    </script>
+</body>
+
+</html>
