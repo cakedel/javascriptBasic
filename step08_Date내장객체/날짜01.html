@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="date"></div>
+    <script>
+        const date = new Date();
+        // 생성자 함수
+        const day = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+
+        const DATE = document.querySelector('.date');
+        DATE.innerHTML += date.toLocaleString() + '<br>';
+        DATE.innerHTML += date.toLocaleDateString() + '<br>';
+        DATE.innerHTML += date.getFullYear() + '<br>';
+        DATE.innerHTML += date.getMonth() + 1 + '<br>';
+        DATE.innerHTML += date.getDate() + '<br>';
+        DATE.innerHTML += date.getSeconds() + '<br>';
+        DATE.innerHTML += day[date.getDay()] + 'day <br>';
+
+
+    </script>
+</body>
+
+</html>

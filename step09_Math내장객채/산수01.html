@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #trueFalse {
+        width: 642px;
+        height: 225px;
+        background: #f00;
+        border-radius: 50%;
+    }
+</style>
+
+<body>
+    <div id="trueFalse"></div>
+    <script>
+        //랜덤한 숫자 만들기
+        let PIE = Math.PI;
+        console.log(PIE);
+
+        const trueFalse = document.querySelector('#trueFalse')
+        const Width = trueFalse.clientWidth;
+        const Height = trueFalse.clientHeight;
+        console.log(Width, Height);
+
+        //Math.floor 소수점 버림
+        //Math.ceil 소수점 올림
+        //Math.round 소수점 반올림
+        const M = Math.floor((Width / 2) * (Height / 2) * PIE);
+
+        trueFalse.innerHTML = `<span>${M}</span>`
+
+        //Math.random
+        const randomNum = Math.random();
+        console.log(randomNum);
+
+        const ranNum = Math.floor(randomNum * 45 + 1);
+        console.log(ranNum);
+
+        const lotto = [];
+
+        for (i = 0; i < 6; i++) {
+            const lottoNum = Math.floor(Math.random() * 45 + 1);
+            lotto.push(lottoNum);
+        }
+
+        console.log(lotto);
+
+
+    </script>
+</body>
+
+</html>
